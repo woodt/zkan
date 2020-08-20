@@ -2,6 +2,10 @@
 
 Experiments in making a very very lightweight data platform.
 
+## Docs
+
+[Development](docs/DEVELOPMENT.md)
+
 ## Overview
 
 zkan is actually an excuse to use some shiny technologies to solve an already solved
