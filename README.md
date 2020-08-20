@@ -87,7 +87,8 @@ Subsequent phases would add:
   This allows easy support of "draft" forms of datasets, which makes
   all sorts of workflows possible (either via a front end or API)
 * Versioning.  Something really simple, like just save old versions of
-  datasets as MongoDB documents.
+  datasets as MongoDB documents. See
+  https://www.mongodb.com/blog/post/building-with-patterns-the-document-versioning-pattern
   
 
 
