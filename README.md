@@ -39,7 +39,7 @@ Subsequent phases would add:
 
 * A search service, that allows datasets to be queried.  For example,
   find me all datasets having to do with "annual temperature".
-* A datastore service, that allows the data in distributions to be
+* A datastore service, that allows the data in distributions to be stored and
   queried.  For example, return the minimum and maximum temperatures
   for a selected city over time.
 * An export service, that would export catalog metadata.  For example,
