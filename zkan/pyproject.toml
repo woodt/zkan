@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "zkan"
+version = "0.1.0"
+description = "Very Lightweight Open Data Platform"
+authors = ["Tom Wood <thomas.a.wood@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = {extras = ["all"], version = "^0.61.0"}
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.3"
+black = "^19.10b0"
+pytest = "^6.0.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
