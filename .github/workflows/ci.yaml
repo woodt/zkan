@@ -14,4 +14,8 @@ jobs:
       - name: install poetry
         uses: abatilo/actions-poetry@v2.0.0
       - name: install dependencies
-        run: cd zkan; poetry install
+        run: poetry install
+        working-directory: zkan
+      - name: run tests
+        run: poetry run python -m pytest
+        working-directory: zkan
