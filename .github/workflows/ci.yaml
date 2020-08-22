@@ -14,4 +14,4 @@ jobs:
       - name: install poetry
         uses: abatilo/actions-poetry@v2.0.0
       - name: install dependencies
-        run: poetry install
+        run: cd zkan; poetry install
