@@ -17,7 +17,7 @@ jobs:
         run: poetry install
         working-directory: zkan
         with:
-          poetry-version: 1.0.10
+          poetry-version: '1.0.10'
       - name: run tests
         run: poetry run python -m pytest
         working-directory: zkan
