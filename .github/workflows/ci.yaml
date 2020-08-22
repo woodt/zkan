@@ -13,11 +13,11 @@ jobs:
           python-version: '3.8'
       - name: install poetry
         uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: '1.0.10'
       - name: install dependencies
         run: poetry install
         working-directory: zkan
-        with:
-          poetry-version: '1.0.10'
       - name: run tests
         run: poetry run python -m pytest
         working-directory: zkan
