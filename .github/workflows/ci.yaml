@@ -1,0 +1,17 @@
+name: Run tests
+on: [push]
+
+jobs:
+  build:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: install poetry
+        uses: abatilo/actions-poetry@v2.0.0
+      - name: install dependencies
+        run: poetry install
