@@ -7,17 +7,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-      - name: install poetry
+
+      - name: Install poetry
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: '1.0.10'
-      - name: install dependencies
+
+      - name: Cache Poetry virtualenv
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: ~/.virtualenvs
+          key: poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            poetry-$${{ hashFiles('**/poetry.lock') }}
+
+      - name: Set Poetry configuration
+        run: |
+          poetry config settings.virtualenvs.in-project false
+          poetry config settings.virtualenvs.path ~/.virtualenvs
+          
+      - name: Install dependencies
         run: poetry install
         working-directory: zkan
+        if: steps.cache.outputs.cache-hit != 'true'
+        
+      - name: Lint with flake8
+        run: poetry run flake8
+        working-directory: zkan
+
+      - name: Lint with black
+        run: poetry run black . --check
+        working-directory: zkan
+        
       - name: run tests
         run: poetry run python -m pytest
         working-directory: zkan
