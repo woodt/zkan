@@ -18,6 +18,6 @@ jobs:
       - name: install dependencies
         run: poetry install
         working-directory: zkan
-      - name: run tests
-        run: poetry run python -m pytest
+      - name: run tests (no db)
+        run: poetry run python -m pytest -m 'not db'
         working-directory: zkan
