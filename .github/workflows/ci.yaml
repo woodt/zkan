@@ -31,12 +31,12 @@ jobs:
         run: |
           poetry config virtualenvs.in-project false
           poetry config virtualenvs.path ~/.virtualenvs
-          
+
       - name: Install dependencies
         run: poetry install
         working-directory: zkan
         if: steps.cache.outputs.cache-hit != 'true'
-        
+
       - name: Lint with flake8
         run: poetry run flake8
         working-directory: zkan
@@ -44,7 +44,7 @@ jobs:
       - name: Lint with black
         run: poetry run black . --check
         working-directory: zkan
-        
-      - name: run tests
-        run: poetry run python -m pytest
+
+      - name: run tests (no db)
+        run: poetry run python -m pytest -m 'not db'
         working-directory: zkan

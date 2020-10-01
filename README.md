@@ -58,7 +58,8 @@ Subsequent phases would add:
 * Docker (and docker-compose) for development and CI
 * [MongoDB](https://www.mongodb.com/) for persistence
 * [JSON Schema](https://json-schema.org/) for validation
-* [pytest](https://docs.pytest.org/en/stable/) for unit (and possibly functional) tests
+* [pytest](https://docs.pytest.org/en/stable/) for unit (and possibly
+  functional) tests
 * [cypress](https://www.cypress.io/) for integration tests, maybe?  Might be better
   to just use pytest and save cypress for the front end!
 * [Pydantic](https://pydantic-docs.helpmanual.io/) and
@@ -92,7 +93,4 @@ Subsequent phases would add:
   all sorts of workflows possible (either via a front end or API)
 * Versioning.  Something really simple, like just save old versions of
   datasets as MongoDB documents. See
-  https://www.mongodb.com/blog/post/building-with-patterns-the-document-versioning-pattern
-  
-
-
+  [Document Versioning](https://www.mongodb.com/blog/post/building-with-patterns-the-document-versioning-pattern)
