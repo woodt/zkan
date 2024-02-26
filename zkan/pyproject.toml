@@ -14,7 +14,7 @@ circuitbreaker = "^1.3.1"
 
 # pin orjson; newer versions seem to need rust toolchain installed;
 # not quite ready for that
-orjson = "3.3.1"
+orjson = "3.9.15"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.3"
